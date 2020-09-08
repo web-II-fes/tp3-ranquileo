@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "progweb2"
+    }
+  },
+  "defaultProject": "progweb2",
+  "cli": {
+    "analytics": false
+  }
 }
