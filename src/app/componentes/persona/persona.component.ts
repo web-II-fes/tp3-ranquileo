@@ -9,8 +9,8 @@ import { PersonaService } from './../servicios/persona.service';
 })
 export class PersonaComponent implements OnInit {
   itemForm: FormGroup;
-
   personas: any[] = [];
+  noticias: any[] = [];
   idPersona: any;
 
   constructor(
@@ -22,6 +22,7 @@ export class PersonaComponent implements OnInit {
     this.initForm();
 
     this.getPersona();
+   // this.getNoticias();
   }
 
   initForm() {
@@ -38,6 +39,13 @@ export class PersonaComponent implements OnInit {
     });
   }
 
+  // getNoticias() {
+  //   this.personaService.getArticlesTechnology().subscribe((noticias) => {
+  //     debugger;
+  //     this.noticias = noticias;
+  //   });
+  // }
+
   editarPersona(persona: any) {
     this.idPersona = persona._id;
     this.itemForm.patchValue({
@@ -47,6 +55,13 @@ export class PersonaComponent implements OnInit {
     });
   }
 
+  borrarPersona(persona: any) {
+    this.idPersona = persona._id;
+    this.personaService
+      .borrarPersona(this.idPersona)
+      .subscribe((result) => console.log('Persona Borrada: ', persona));
+  }
+
   submit() {
     if (this.idPersona) {
       this.personaService
@@ -54,12 +69,12 @@ export class PersonaComponent implements OnInit {
         .subscribe((persona) => {
           console.log('Persona Editada: ', persona);
         });
-    } else{
+    } else {
       this.personaService
         .guardarPersona(this.itemForm.value)
         .subscribe((persona) => {
           console.log('Persona Nueva: ', persona);
         });
-      }
+    }
   }
 }

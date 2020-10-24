@@ -1,0 +1,20 @@
+.texto,
+h2 {
+  width: 100%;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contenedor {
+  width: 100%;
+  padding: 10px 30px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.personas {
+  padding-bottom: 10px;
+  padding-top: 30px;
+}
