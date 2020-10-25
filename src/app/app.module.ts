@@ -17,9 +17,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { CursoComponent } from './componentes/curso/curso.component';
+import { ListarCursoComponent } from './componentes/listar-curso/listar-curso/listar-curso.component';
 
 @NgModule({
-  declarations: [AppComponent, PersonaComponent, CursoComponent],
+  declarations: [AppComponent, PersonaComponent, CursoComponent, ListarCursoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

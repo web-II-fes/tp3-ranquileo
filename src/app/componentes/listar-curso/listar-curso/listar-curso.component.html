@@ -1,0 +1,42 @@
+<p>listar-curso works!</p>
+<mat-card>
+    <button mat-raised-button color="primary" [routerLink]="'/curso/new'">
+      Crear Curso
+    </button>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="nombreCurso">
+        <th mat-header-cell *matHeaderCellDef>Nombre Curso</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.nombreCurso | titlecase }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="profesor">
+        <th mat-header-cell *matHeaderCellDef>Profesor</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.profesor | titlecase }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef>Año</th>
+        <td mat-cell *matCellDef="let element">{{ element.ano }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.estado | titlecase }}
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        [routerLink]="'/curso/new' + row._id"
+      ></tr>
+    </table>
+  </mat-card>
+  
