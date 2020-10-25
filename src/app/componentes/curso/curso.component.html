@@ -1,0 +1,79 @@
+<p>curso works!</p>
+<mat-card>
+    <form [formGroup]="itemForm" (ngSubmit)="submit()">
+      <div class="contenedor">
+        <h1>Ingrese sus Datos</h1>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nombre Curso: </mat-label>
+            <input
+              matInput
+              name="nombreCurso"
+              formControlName="nombreCurso"
+              placeholder="Nombre del Curso"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Profesor: </mat-label>
+            <input
+              matInput
+              name="profesor"
+              formControlName="profesor"
+              placeholder="Profesor"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Ano: </mat-label>
+            <input
+              matInput
+              name="ano"
+              formControlName="ano"
+              placeholder="Ano de Cursado"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="example-full-width">
+            <mat-label>Estado: </mat-label>
+            <input
+              matInput
+              name="estado"
+              formControlName="estado"
+              placeholder="Estado de Cursado"
+            />
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-raised-button color="primary">Guardar</button>
+        </div>
+  
+        <div *ngFor="let curso of cursos">
+          <p>Nombre Curso: {{ curso.nombreCurso }}</p>
+          <p>Profesor: {{ curso.profesor }}</p>
+          <p>Ano: {{ curso.ano }}</p>
+          <p>Estado: {{ curso.estado }}</p>
+          <button
+            type="button"
+            mat-raised-button
+            color="accent"
+            (click)="editarCurso(curso)"
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            mat-raised-button
+            color="warn"
+            (click)="borrarCurso(curso)"
+          >
+            Borrar
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+  

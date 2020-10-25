@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { PersonaService } from './../servicios/persona.service';
+import { PersonaService } from 'src/app/servicios/persona.service';
 
 @Component({
   selector: 'app-persona',

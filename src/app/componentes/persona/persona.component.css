@@ -1,20 +1,8 @@
-.texto,
-h2 {
-  width: 100%;
-  text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.contenedor {
-  width: 100%;
-  padding: 10px 30px;
-}
-
-button {
-  margin-left: 10px;
-}
-
-.personas {
-  padding-bottom: 10px;
-  padding-top: 30px;
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  margin:1rem auto;
+  max-width: 800px;
+  box-shadow: -1px 3px 66px 0px rgba(0,0,0,0.75);
+  padding: 1rem;
 }
