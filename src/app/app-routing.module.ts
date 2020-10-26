@@ -7,7 +7,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/auth/auth.module').then((m) => m.AuthModule),
   },
-
+  {
+    path: 'persona',
+    loadChildren: () => import('./modules/personas/persona.module').then((m) => m.PersonaModule)
+  },
+  
 
 ];
 
