@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './services/auth.service';
 import { TokenStorageService } from './services/token-storage.service';
+import { authInterceptorProviders } from './helper/auth.intereceptor';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +25,6 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatInputModule,
   ],
-  providers: [AuthService, TokenStorageService],
+  providers: [AuthService, TokenStorageService,authInterceptorProviders],
 })
 export class AuthModule {}
